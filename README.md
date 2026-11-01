@@ -17,6 +17,20 @@ The complete project description, including features, user journey, similar appl
 
 [View Project Specification — Google Drive](https://docs.google.com/document/d/1n_E37jPjphMbCteOcuHnphUFih9jZDZrQpTYZmo6D_Y/edit?tab=t.0)
 
+
+## Tema 5 — Main Modules
+
+The second assignment focuses on defining the main modules and user interactions of MuseumTwin VR.
+
+The document includes:
+- User Story Map with goals, activities, and features
+- Three User Journey Maps
+- Eight low-fidelity storyboard sketches
+- Asset creation plan for 3D models, UI, sounds, and VFX
+
+[View Tema 5 — Main Modules (Google Drive)](https://docs.google.com/document/d/1f1UZ04Dr9kMBAhLeHXH1Y_np9kXkKPVA/edit?usp=drivesdk)
+
+
 ## Project Description
 
 MuseumTwin VR aims to create an immersive digital reconstruction of a museum located in the Palace of Culture in Iași.
