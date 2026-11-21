@@ -134,8 +134,7 @@ public sealed class MuseumExhibitInteractions : MonoBehaviour
     {
         Camera c = GetCamera();
         if (c == null) { Debug.LogWarning("MuseumTwin: no XR camera found."); return false; }
-        viewRotation = Quaternion.LookRotation(c.transform.forward, Vector3.up);
-        viewPosition = c.transform.position + c.transform.forward * 1.15f;
+        MuseumPanelPlacement.FindAnchor(c, out viewPosition, out viewRotation);
         canvasObject.GetComponent<Canvas>().worldCamera = c;
         return true;
     }
