@@ -1,264 +1,189 @@
-
 # MuseumTwin VR — Iași Museum Digital Twin
 
-An immersive Virtual Reality application that allows visitors to explore a digital reconstruction of a museum in Iași, interact with exhibits, and discover their historical significance.
+MuseumTwin VR is an immersive educational Virtual Reality prototype inspired by the Museum of History of Moldavia at the Palace of Culture in Iași. Visitors explore a virtual museum, inspect historical objects, and interact with educational demonstrations.
 
 ## Project Information
 
 - **Team member:** Rotariu David
 - **Course:** Immersive / Mixed Reality
-- **Platform:** Meta Quest 2
-- **Engine:** Unity 6
-- **Programming Language:** C#
-- **Status:** Prototype Development
+- **Target platform:** Meta Quest 2
+- **Engine:** Unity 6.3 LTS
+- **Programming language:** C#
+- **XR framework:** XR Interaction Toolkit 3.3.2 and OpenXR
+- **Status:** Functional Unity prototype; final standalone Meta Quest 2 validation and performance optimization remain to be completed.
 
 ## Project Documentation
 
 ### Tema 4 — Project Specification
 
-The initial project definition includes:
-- Application description and objectives
-- Comparison with similar applications
-- Main features and user journey
-- Visual moodboard
-- Technologies and libraries
+The initial specification defines the project concept, objectives, similar applications, user experience, visual moodboard, technologies and libraries.
 
-[View Project Specification — Google Drive](https://docs.google.com/document/d/1n_E37jPjphMbCteOcuHnphUFih9jZDZrQpTYZmo6D_Y/edit?tab=t.0)
+[View Project Specification — Google Docs](https://docs.google.com/document/d/1n_E37jPjphMbCteOcuHnphUFih9jZDZrQpTYZmo6D_Y/edit?tab=t.0)
 
 ### Tema 5 — Main Modules
 
-This assignment focuses on defining the main modules and user interactions of MuseumTwin VR.
+Defines the application's user story map, three user journeys, eight low-fidelity storyboards, and an asset creation plan for 3D models, UI, sounds and visual effects.
 
-The document includes:
-- User Story Map with goals, activities, and features
-- Three User Journey Maps
-- Eight low-fidelity storyboard sketches
-- Asset creation plan for 3D models, UI, sounds, and VFX
+[View Main Modules — Google Docs](https://docs.google.com/document/d/1f1UZ04Dr9kMBAhLeHXH1Y_np9kXkKPVA/edit?usp=drivesdk)
 
-[View Tema 5 — Main Modules (Google Drive)](https://docs.google.com/document/d/1f1UZ04Dr9kMBAhLeHXH1Y_np9kXkKPVA/edit?usp=drivesdk)
+### Tema 6 — Initial Prototype Environment & Interactive Exhibits
 
-### Tema 6 — Prototype Environment & Interactive Exhibits
+- Created a first graybox museum room with floor, walls, an entrance and exhibit pedestals.
+- Configured XR Origin, XR Interaction Manager, XR Device Simulator and Near-Far Interactors.
+- Created/imported four approximate low-poly historical exhibit models.
+- Added colliders, XR Simple Interactable components, and world-space information panels.
+- Connected exhibit selection to contextual information display.
+- Tested basic selection and information display in Unity Play Mode.
 
-This assignment focuses on building a functional museum prototype in Unity, importing historical exhibit models, and experimenting with VR interactions.
+### Week 9 — Functional Prototype & Presentation
 
-**Objectives:**
-- Create a graybox prototype of the museum environment.
-- Introduce 3–4 representative historical exhibits.
-- Implement basic VR interactions for the exhibits.
-- Design educational interactions that reveal interesting or unexpected information about historical objects.
-- Test object scale, navigation, and interactions in VR.
+Week 9 presents the **main idea, design, reason for using VR, grayboxed 3D environment, asset provenance, current functional prototype, testing conclusions and planned implementation improvements**.
 
-**Completed:**
+**Completed for Week 9:**
+- Expanded the scene to **five connected rooms** with entrance, galleries, corridors, exhibits and pedestals.
+- Added decorative primitive exhibits and improved object placement.
+- Implemented **View, Rotate, Zoom, Grab, Return to stand and Close** controls.
+- Implemented a separate educational **Explore** experience for each of the four main exhibits.
+- Improved preview heights and panel positioning to reduce interference with pedestals and walls.
+- Tested navigation and interaction flows in the Unity XR Device Simulator.
+- Prepared a PowerPoint presentation containing **four embedded video demonstrations** of the exhibits.
+- Documented team-created, externally sourced and AI-assisted parts of the prototype.
 
-- Created a graybox museum room using Unity primitives.
-- Added walls, a floor, an entrance, and exhibit pedestals.
-- Configured XR Origin and XR Device Simulator.
-- Configured Near-Far Interactors for controller-based interaction.
-- Created and imported four approximate low-poly historical exhibit models.
-- Added colliders and XR Simple Interactable components.
-- Configured exhibit selection events.
-- Created world-space information panels.
-- Implemented showing and hiding exhibit descriptions through XR selection.
-- Tested basic exhibit interaction in the XR Device Simulator.
+**Week 9 presentation:** [MuseumTwin_Prezentare_Video.pptx](video/MuseumTwin_Prezentare_Video.pptx) — available in the repository's **[`video/`](video/) folder**. The PowerPoint includes clips demonstrating all four exhibits.
 
-**Current limitations:**
+**Earlier prototype recording:** [tema6.mkv](video/tema6.mkv).
 
-- The museum currently contains one prototype exhibition room.
-- The 3D models are approximate reconstructions, not accurate historical scans.
-- Basic exhibit selection is implemented, but advanced educational interactions are still planned.
-- Real headset testing and performance optimization remain to be completed.
+## Project Description & Purpose of VR
 
-## Project Description
+The goal is to create a virtual museum inspired by the Palace of Culture in Iași, where visitors can move between exhibitions, learn about historical objects, and experience activities that would be difficult with fragile real artifacts.
 
-MuseumTwin VR aims to create an immersive digital reconstruction of a museum located in the Palace of Culture in Iași.
+VR is used for spatial presence, intuitive controller-based exploration, visualization of objects at different scales, and engaging educational demonstrations. The current environment is an **illustrative graybox**, not a dimensionally accurate museum scan.
 
-Visitors will be able to navigate through virtual exhibition rooms, interact with historical artifacts, and access educational information about each exhibit.
-
-The long-term goal is to reconstruct as much of the museum as possible while maintaining a comfortable VR experience.
+**Audience:** students, tourists and history enthusiasts.
 
 ## Main Features
 
-- Immersive 3D museum reconstruction
-- VR navigation using controllers
-- Interactive historical exhibits
-- Information panels with historical descriptions
-- Navigation between exhibition rooms
-- Realistic lighting, materials, and textures
-- Educational interactions with selected exhibits
+- Walkable 3D museum with five connected spaces.
+- VR controller-ray exhibit selection and contextual information panels.
+- View copies of exhibits, rotate and zoom.
+- Grab exhibits and return them to their original stands.
+- Four independent educational Explore demonstrations.
+- World-space menus with improved positioning to reduce obstruction.
+- Unity XR Device Simulator support for prototype testing.
 
 ## Current Prototype
 
 ### Museum Environment
 
-The current Unity scene is named:
+**Main working scene:** `Assets/MuseumPrototype_ViewGrab_Restored.unity`
 
-`MuseumPrototype_4Exhibits`
+The graybox museum contains an entrance hall, a central hall, left and right galleries, and a rear gallery, connected through passages. The scene includes walls, floors, exhibit stands, decorative objects, four imported historical models and the XR interaction rig.
 
-It contains:
-- One graybox museum room
-- Walls and floor
-- Four exhibit pedestals
-- Four imported historical exhibit models
-- XR Origin and XR Device Simulator
-- Controller-based interactions
-- Information panels for the exhibits
+The simple graybox geometry prioritizes circulation, scale, accessibility and interaction testing before detailed architectural modeling.
 
-### Historical Exhibits
+### Historical Exhibits and Explore Interactions
 
-Four approximate 3D models have been created for the prototype.
+| Exhibit | Implemented educational interaction |
+|---|---|
+| **Pocket Sundial (1591)** | Change the simulated hour and observe how the geometrically calculated shadow moves. |
+| **Medieval Monoxyl Boat** | Step through four illustrative stages from a tree trunk to the finished dugout boat. |
+| **Prehistoric Ceramic Amphora** | Watch an animated shattering sequence using fragments from the **original imported amphora mesh**; the exhibit on its pedestal stays intact. |
+| **Mammoth Skull** | Reveal a separate full-body mammoth reconstruction to illustrate the animal's general proportions and size. |
 
-#### 1. Pocket Sundial (1591)
+The models and demonstrations are simplified educational approximations, not historical scans or scientifically validated simulations.
 
-A historical portable sundial representing an early method of measuring time.
+### VR Interaction Flow
 
-**Implemented:**
-- Low-poly 3D model
-- Collider and XR Simple Interactable
-- Basic information panel
+1. Navigate to an exhibit and select it using an XR controller ray.
+2. Read contextual information in the world-space menu.
+3. Select **View** to inspect an exhibit copy with rotation and zoom.
+4. Select **Grab** to manipulate the exhibit, then **Return to stand** to reset it.
+5. Select **Explore** to activate the exhibit-specific demonstration.
+6. Close the interaction and continue visiting the museum.
 
-**Planned special interaction:**
-The visitor will be able to manipulate a virtual light source to understand how the sundial measures time through shadows.
-
-#### 2. Medieval Monoxyl Boat
-
-A historical boat carved from a single tree trunk.
-
-**Implemented:**
-- Low-poly 3D boat model
-- Collider and XR Simple Interactable
-- Basic information panel
-
-**Planned special interaction:**
-The visitor will be able to switch between a tree trunk and the reconstructed boat, visualizing how such a vessel could have been created.
-
-#### 3. Prehistoric Ceramic Vessel
-
-A ceramic vessel inspired by prehistoric archaeological discoveries.
-
-**Implemented:**
-- Low-poly 3D ceramic model
-- Collider and XR Simple Interactable
-- Basic information panel
-
-**Planned special interaction:**
-The visitor will reconstruct a broken ceramic vessel by grabbing fragments and placing them in their correct positions.
-
-#### 4. Mammoth Skull
-
-An approximate 3D representation of a prehistoric mammoth skull.
-
-**Implemented:**
-- Low-poly 3D skull model
-- Collider and XR Simple Interactable
-- Basic information panel
-
-**Planned special interaction:**
-Selecting the skull will reveal a full-scale 3D reconstruction of a mammoth, allowing visitors to understand its real dimensions.
-
-### VR Interaction System
-
-The prototype uses Unity's XR Interaction Toolkit.
-
-**Implemented components:**
-- XR Origin (XR Rig)
-- XR Interaction Manager
-- XR Device Simulator
-- Near-Far Interactor
-- XR Simple Interactable
-- Object Colliders
-- World Space Canvas
-- TextMesh Pro
-
-**Basic interaction flow:**
-
-1. The visitor approaches an exhibit.
-2. The visitor points a controller toward the object.
-3. The visitor selects the exhibit.
-4. An information panel appears.
-5. The visitor reads the description.
-6. The panel can be hidden, allowing exploration to continue.
+The common interaction logic is in `Assets/Scripts/MuseumTwin/Scripts/MuseumExhibitInteractions.cs`. Each Explore experience has a separate C# script.
 
 ## Technologies
 
 - [Unity 6](https://unity.com/)
-- [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.3/manual/index.html)
+- [XR Interaction Toolkit 3.3](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@3.3/manual/index.html)
 - [OpenXR](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.15/manual/index.html)
-- [Blender](https://www.blender.org/)
-- C#
-- TextMesh Pro
-- Git & GitHub
+- C#; Unity UI; TextMesh Pro
+- Unity XR Device Simulator
+- Git and GitHub
+
+## Asset Sources & AI Assistance
+
+**Developed/integrated for the project:** five-room graybox, stands, corridors, primitive decorative exhibits, scene configuration, information panels, interaction flow, and C# exhibit demos.
+
+**External sources:** Unity XR Interaction Toolkit, OpenXR, XR Device Simulator starter/sample assets, and hand/controller assets reused from an earlier course laboratory.
+
+**AI-assisted development (ChatGPT):** assistance with parts of the C# scripts, debugging, troubleshooting, and creation of some simplified 3D exhibit models, including the full-body mammoth reconstruction. All components were integrated and tested iteratively by the developer. **AI is not a runtime feature of the museum application.**
+
+## Testing and Current Limitations
+
+**Verified in Unity Play Mode / XR Device Simulator:**
+- Navigation between connected museum rooms.
+- Exhibit selection, information menus, View, Rotate, Zoom, Grab and Return to stand.
+- Mammoth reconstruction, monoxyl construction stages, sundial shadow demo and original-mesh amphora shattering.
+- Fixes to corridor openings, floating objects, preview placement and menu accessibility.
+
+**Remaining work:**
+- Final testing of all interactions on Meta Quest 2.
+- Standalone Android APK validation and frame-rate profiling.
+- Detailed architecture, materials, lighting, labels and accessibility refinements.
+- Historical verification of artifact descriptions and model provenance.
 
 ## Development Progress
 
-This section will be updated after each laboratory session.
-
-| Week | Planned Work | Status |
+| Week / Milestone | Work | Status |
 |---|---|---|
-| 1 | Repository and project documentation | Completed |
+| 1 | Repository and initial project documentation | Completed |
 | 2 | XR configuration and simulator setup | Completed |
-| 3 | Museum graybox environment | Initial room completed |
-| 4 | Materials, textures, and lighting | Planned |
-| 5 | Import historical 3D exhibits | 4 models imported |
-| 6 | Exhibit interactions | Basic interactions implemented |
-| 7 | Information panels | Basic panels implemented |
-| 8 | Additional museum rooms | Planned |
-| 9 | VR testing and optimization | Pending |
-| 10 | Final presentation | Planned |
+| 3 | Initial museum graybox | Completed |
+| 4 | Materials, textures and lighting | Further refinement planned |
+| 5 | Import historical exhibits | Four models imported |
+| 6 / Tema 6 | Basic exhibit selection and information panels | Completed |
+| 7 | Enhanced exhibit UI and interactions | Completed |
+| 8 | Five connected rooms and View / Grab controls | Completed |
+| **9** | **Functional prototype, four Explore demonstrations, Week 9 PowerPoint with videos** | **Completed in Unity simulator** |
+| 10 | Meta Quest 2 validation, optimization and finishing | Planned |
 
 ## Weekly Updates
 
 ### Week 1 — Project Initialization
 
-**Completed:**
-- Defined the project concept.
-- Created a public GitHub repository.
-- Prepared the initial project specification.
-- Established the main project requirements.
+- Defined the concept and initial requirements.
+- Created the public GitHub repository and project specification.
 
 ### Tema 5 — Main Modules and Graybox
 
-**Completed:**
-- Defined the application's main modules.
-- Created User Story Maps and Journey Maps.
-- Designed low-fidelity storyboards.
-- Prepared an asset creation checklist.
-- Configured the Unity XR environment.
-- Built the initial museum graybox.
-- Added three primitive exhibits and pedestals.
-- Tested the first interactive information panel.
+- Prepared user story maps, journeys, storyboards and an asset checklist.
+- Configured the Unity XR environment and built the initial graybox.
 
 ### Tema 6 — Interactive Museum Exhibits
 
-**Completed:**
-- Created four approximate historical 3D models.
-- Imported the models into Unity.
-- Positioned the exhibits on museum pedestals.
-- Added a fourth pedestal.
-- Added Box Colliders to the exhibit objects.
-- Configured XR Simple Interactable components.
-- Created individual exhibit information panels.
-- Connected exhibit selection events to information panels.
-- Tested basic selection and information display in the simulator.
+- Imported four approximate historical 3D models and set up exhibit pedestals.
+- Added colliders, interactable components and individual information panels.
+- Tested basic selection and panel visibility in the XR simulator.
 
-**Next Steps:**
-- Implement special educational interactions for the exhibits.
-- Add more accurate exhibit descriptions and references.
-- Improve exhibit positioning and visual presentation.
-- Extend the museum environment.
-- Test the prototype on Meta Quest 2.
-- Optimize the application for standalone VR.
+### Week 9 — Functional Prototyping and Presentation
+
+- Reorganized the prototype into five connected museum rooms.
+- Implemented reusable inspection and manipulation controls.
+- Added four distinct Explore interactions: mammoth reconstruction, boat-construction stages, sundial shadows and amphora shattering.
+- Improved menu and preview positioning for better reachability.
+- Tested the functional prototype in Unity and recorded demonstrations.
+- Prepared the [Week 9 presentation with embedded video](video/MuseumTwin_Prezentare_Video.pptx), located in the [`video/`](video/) folder.
+- Presented the VR purpose, scene design, grayboxing, asset provenance, AI assistance, functional testing and next implementation steps.
 
 ## Future Improvements
 
-- More detailed museum architecture
-- Accurate historical exhibit models
-- Interactive ceramic reconstruction puzzle
-- Sundial lighting simulation
-- Mammoth reconstruction visualization
-- Medieval boat transformation demonstration
-- Additional museum rooms
-- Improved UI and visual effects
-- Performance optimization for Meta Quest 2
+- Test and optimize the complete experience for standalone Meta Quest 2.
+- Improve museum architecture, material quality, lighting and signage.
+- Verify historical descriptions and refine educational explanations.
+- Improve world-space menu readability and accessibility.
+- Expand the museum with additional exhibits after stabilizing the core prototype.
 
 ## Repository
 
@@ -266,6 +191,5 @@ https://github.com/LogicaVietii/Muzeu-National-Iasi-digital-twin
 
 ## Author
 
-**Rotariu David**
-
+**Rotariu David**  
 Immersive / Mixed Reality Project
